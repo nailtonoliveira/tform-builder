@@ -1,0 +1,37 @@
+export type FieldType = "text" | "money" | "date";
+
+export interface FieldValidation {
+  required?: boolean;
+  maxLength?: number;
+  minValue?: number;
+  maxValue?: number;
+  allowPastDates?: boolean;
+}
+
+export interface FieldSchema {
+  id: string;
+  type: FieldType;
+  label: string;
+  placeholder?: string;
+  validation?: FieldValidation;
+  columns?: number;
+}
+
+export type ActionType = "rest" | "route";
+
+export interface ActionSchema {
+  id: string;
+  type: ActionType;
+  label: string;
+  endpoint?: string;
+  method?: "GET" | "POST" | "PUT" | "DELETE";
+  route?: string;
+}
+
+export interface FormSchema {
+  id: string;
+  title?: string;
+  description?: string;
+  fields: FieldSchema[];
+  actions: ActionSchema[];
+}

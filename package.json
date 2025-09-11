@@ -6,14 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.2",
     "@mui/material-nextjs": "^7.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
     "next": "15.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"

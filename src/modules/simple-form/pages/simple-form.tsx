@@ -14,20 +14,25 @@ const formSchema: FormSchema = {
   fields: [
     {
       id: "name",
+      name: "name",
       type: "text",
       label: "Nome do Produto",
       placeholder: "Digite o nome do produto",
       validation: { required: true, maxLength: 50 },
+      columns: 7,
     },
     {
       id: "price",
+      name: "price",
       type: "money",
       label: "Valor",
       placeholder: "0,00",
-      validation: { required: true, minValue: 0, maxValue: 10000 },
+      validation: { required: true, minValue: 0.01, maxValue: 10000.0 },
+      columns: 5,
     },
     {
       id: "releaseDate",
+      name: "releaseDate",
       type: "date",
       label: "Data de Lançamento",
       validation: { required: true, allowPastDates: false },

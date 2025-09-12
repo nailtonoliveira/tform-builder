@@ -10,6 +10,7 @@ export interface FieldValidation {
 
 export interface FieldSchema {
   id: string;
+  name: string;
   type: FieldType;
   label: string;
   placeholder?: string;

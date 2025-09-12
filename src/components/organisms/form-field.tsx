@@ -13,16 +13,38 @@ interface Props {
   field: FieldSchema;
   control: Control;
   error?: string;
+  columns?: number;
 }
 
-export function FormField({ field, control, error }: Props) {
+export function FormField({ field, control, error, columns }: Props) {
   switch (field.type) {
     case "text":
-      return <TextFieldInput field={field} control={control} error={error} />;
+      return (
+        <TextFieldInput
+          field={field}
+          control={control}
+          error={error}
+          columns={columns}
+        />
+      );
     case "money":
-      return <MoneyFieldInput field={field} control={control} error={error} />;
+      return (
+        <MoneyFieldInput
+          field={field}
+          control={control}
+          error={error}
+          columns={columns}
+        />
+      );
     case "date":
-      return <DateFieldInput field={field} control={control} error={error} />;
+      return (
+        <DateFieldInput
+          field={field}
+          control={control}
+          error={error}
+          columns={columns}
+        />
+      );
     default:
       return null;
   }

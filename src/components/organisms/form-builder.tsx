@@ -3,7 +3,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 
 import { useFormSchema } from "~/hooks/useFormSchema";
 import { FormSchema } from "~/types/form";
@@ -50,14 +51,27 @@ export function FormBuilder({ formSchema }: Props) {
       onSubmit={handleSubmit(onSubmit)}
       sx={{ display: "flex", flexDirection: "column", gap: 2 }}
     >
-      {formSchema.fields.map((field) => (
-        <FormField
-          key={field.id}
-          field={field}
-          control={control}
-          error={errors[field.id]?.message as string}
-        />
-      ))}
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          p: 4,
+          borderWidth: 1,
+          borderStyle: "solid",
+          borderColor: "text.disabled",
+          borderRadius: 2,
+        }}
+      >
+        {formSchema.fields.map((field) => (
+          <FormField
+            key={field.id}
+            field={field}
+            control={control}
+            error={errors[field.id]?.message as string}
+            columns={field.columns}
+          />
+        ))}
+      </Grid>
 
       <FormActions actions={formSchema.actions} />
     </Box>

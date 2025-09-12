@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={roboto.variable}>
+    <html lang="pt-BR" className={roboto.variable} suppressHydrationWarning>
       <body>
         <AppRouterCacheProvider>
           <CssBaseline />

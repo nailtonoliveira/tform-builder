@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import { theme } from "~/theme";
+import { BaseLayout } from "~/modules/common/layouts";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body>
         <AppRouterCacheProvider>
           <CssBaseline />
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <BaseLayout>{children}</BaseLayout>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

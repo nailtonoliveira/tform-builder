@@ -37,7 +37,7 @@
         "id": "940b56eb-ef60-45cc-bd3e-b8f954915077",
         "type": "rest",
         "label": "Salvar",
-        "endpoint": "/api/produtos",
+        "endpoint": "/api/forms",
         "method": "POST"
       },
       {
@@ -50,7 +50,7 @@
   },
   {
     "id": "38a38c5b-650e-42e9-ae48-72e95021b6f5",
-    "": "cadastro-cliente",
+    "slug": "cadastro-cliente",
     "title": "Cadastro de Cliente",
     "description": "Formulário de cadastro de cliente.",
     "fields": [
@@ -68,8 +68,9 @@
         "id": "1b2aba70-e57b-435f-bfb0-043249ea3565",
         "type": "rest",
         "label": "Salvar Cliente",
-        "endpoint": "/api/clientes",
-        "method": "POST"
+        "endpoint": "/api/forms",
+        "method": "POST",
+        "on_success_route": "/success-submit"
       }
     ]
   }

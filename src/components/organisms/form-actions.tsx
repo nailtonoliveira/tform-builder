@@ -5,9 +5,10 @@ import { ActionSchema } from "../../types/form";
 
 interface Props {
   actions: ActionSchema[];
+  isLoading?: boolean;
 }
 
-export function FormActions({ actions }: Props) {
+export function FormActions({ actions, isLoading }: Props) {
   return (
     <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2, mt: 2 }}>
       {actions.map((action) => (
@@ -21,6 +22,7 @@ export function FormActions({ actions }: Props) {
               window.location.href = action.route;
             }
           }}
+          disabled={isLoading}
         >
           {action.label}
         </Button>

@@ -1,22 +1,25 @@
 "use client";
 
-import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import { toast } from "sonner";
 
 import { useFormSchema } from "~/hooks/useFormSchema";
 import { FormSchema } from "~/types/form";
 
 import { FormActions } from "./form-actions";
 import { FormField } from "./form-field";
+import { useSubmitForm } from "~/hooks/useSubmitForm";
 
 interface Props {
   formSchema: FormSchema;
 }
 
 export function FormBuilder({ formSchema }: Props) {
+  const router = useRouter();
   const schemaZod = useFormSchema(formSchema.fields);
 
   const defaultValues = formSchema.fields.reduce((acc, field) => {
@@ -41,8 +44,33 @@ export function FormBuilder({ formSchema }: Props) {
     defaultValues,
   });
 
+  const submitMutation = useSubmitForm();
+
   const onSubmit = (data: Record<string, unknown>) => {
-    console.log("Form values:", data);
+    const restAction = formSchema.actions.find((a) => a.type === "rest");
+    if (!restAction || !restAction.endpoint || !restAction.method) return;
+
+    submitMutation.mutate(
+      {
+        endpoint: restAction.endpoint,
+        method: restAction.method,
+        payload: data,
+      },
+      {
+        onSuccess: () => {
+          toast.success(`Sucesso`, {
+            description: `Sucesso ao submeter o formulário ${formSchema.title}`,
+          });
+
+          if (restAction.on_success_route) {
+            router.push(restAction.on_success_route);
+            return;
+          }
+
+          router.back();
+        },
+      }
+    );
   };
 
   return (
@@ -73,7 +101,10 @@ export function FormBuilder({ formSchema }: Props) {
         ))}
       </Grid>
 
-      <FormActions actions={formSchema.actions} />
+      <FormActions
+        actions={formSchema.actions}
+        isLoading={submitMutation.isPending}
+      />
     </Box>
   );
 }

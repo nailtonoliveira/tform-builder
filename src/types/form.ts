@@ -25,8 +25,9 @@ export interface ActionSchema {
   type: ActionType;
   label: string;
   endpoint?: string;
-  method?: "GET" | "POST" | "PUT" | "DELETE";
+  method?: "POST" | "PUT" | "PATCH";
   route?: string;
+  on_success_route?: string;
 }
 
 export interface FormSchema {

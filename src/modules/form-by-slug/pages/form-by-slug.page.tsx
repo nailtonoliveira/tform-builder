@@ -6,18 +6,18 @@ import { Box, Grid, Skeleton, Typography } from "@mui/material";
 
 import { FormBuilder } from "~/components";
 
-import { getFormSchemaByID } from "../services/simple-form.services";
+import { getFormSchemaBySlug } from "../services/form-by-slug.services";
 
 interface SimpleFormProps {
-  params: Promise<{ formID: string }>;
+  params: Promise<{ formSlug: string }>;
 }
 
-export default function SimpleForm({ params }: SimpleFormProps) {
-  const formID = use(params).formID;
+export default function FormBySlugPage({ params }: SimpleFormProps) {
+  const formSlug = use(params).formSlug;
 
   const query = useQuery({
-    queryKey: ["form", formID],
-    queryFn: () => getFormSchemaByID(formID),
+    queryKey: ["form", formSlug],
+    queryFn: () => getFormSchemaBySlug(formSlug),
   });
 
   if (query.isLoading)

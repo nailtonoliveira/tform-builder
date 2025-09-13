@@ -1,11 +1,8 @@
 import { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { ThemeProvider } from "@mui/material/styles";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import CssBaseline from "@mui/material/CssBaseline";
 
-import { theme } from "~/theme";
 import { BaseLayout } from "~/modules/common/layouts";
+import { RootProviders } from "~/modules/common/providers";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -27,12 +24,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={roboto.variable} suppressHydrationWarning>
       <body>
-        <AppRouterCacheProvider>
-          <CssBaseline />
-          <ThemeProvider theme={theme}>
-            <BaseLayout>{children}</BaseLayout>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <RootProviders>
+          <BaseLayout>{children}</BaseLayout>
+        </RootProviders>
       </body>
     </html>
   );

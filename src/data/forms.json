@@ -1,0 +1,76 @@
+[
+  {
+    "id": "0e17e7cc-730c-4a73-930d-759422b66a6f",
+    "slug": "cadastrar-produto",
+    "title": "Cadastro de Produto",
+    "description": "Preencha os dados abaixo para cadastrar um novo produto.",
+    "fields": [
+      {
+        "id": "da467f78-cf7b-4c1c-9b2e-e92965cb3f83",
+        "name": "product_name",
+        "type": "text",
+        "label": "Nome do Produto",
+        "placeholder": "Digite o nome do produto",
+        "validation": { "required": true, "maxLength": 50 },
+        "columns": 7
+      },
+      {
+        "id": "ba2988e9-b98e-4df5-9928-9ced0ef15c37",
+        "name": "price",
+        "type": "money",
+        "label": "Valor",
+        "placeholder": "0,00",
+        "validation": { "required": true, "minValue": 0, "maxValue": 10000 },
+        "columns": 5
+      },
+      {
+        "id": "2d5235df-b177-4963-90d8-f5c2a595d578",
+        "name": "releaseDate",
+        "type": "date",
+        "label": "Data de Lançamento",
+        "validation": { "required": true, "allowPastDates": false },
+        "columns": 12
+      }
+    ],
+    "actions": [
+      {
+        "id": "940b56eb-ef60-45cc-bd3e-b8f954915077",
+        "type": "rest",
+        "label": "Salvar",
+        "endpoint": "/api/produtos",
+        "method": "POST"
+      },
+      {
+        "id": "2d8eecf9-9006-4cb5-84fd-4c2eae08392a",
+        "type": "route",
+        "label": "Voltar",
+        "route": "/"
+      }
+    ]
+  },
+  {
+    "id": "38a38c5b-650e-42e9-ae48-72e95021b6f5",
+    "": "cadastro-cliente",
+    "title": "Cadastro de Cliente",
+    "description": "Formulário de cadastro de cliente.",
+    "fields": [
+      {
+        "id": "1df345eb-4851-44be-835b-01273ffb425f",
+        "name": "name",
+        "type": "text",
+        "label": "Nome",
+        "placeholder": "Digite o nome",
+        "validation": { "required": true }
+      }
+    ],
+    "actions": [
+      {
+        "id": "1b2aba70-e57b-435f-bfb0-043249ea3565",
+        "type": "rest",
+        "label": "Salvar Cliente",
+        "endpoint": "/api/clientes",
+        "method": "POST"
+      }
+    ]
+  }
+]

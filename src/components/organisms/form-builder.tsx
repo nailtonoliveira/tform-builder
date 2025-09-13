@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Box from "@mui/material/Box";
@@ -23,10 +23,10 @@ export function FormBuilder({ formSchema }: Props) {
     switch (field.type) {
       case "text":
       case "money":
-        acc[field.id] = "";
+        acc[field.name] = "";
         break;
       case "date":
-        acc[field.id] = null;
+        acc[field.name] = null;
         break;
     }
     return acc;
@@ -67,7 +67,7 @@ export function FormBuilder({ formSchema }: Props) {
             key={field.id}
             field={field}
             control={control}
-            error={errors[field.id]?.message as string}
+            error={errors[field.name]?.message as string}
             columns={field.columns}
           />
         ))}

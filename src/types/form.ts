@@ -31,6 +31,7 @@ export interface ActionSchema {
 
 export interface FormSchema {
   id: string;
+  slug: string;
   title?: string;
   description?: string;
   fields: FieldSchema[];

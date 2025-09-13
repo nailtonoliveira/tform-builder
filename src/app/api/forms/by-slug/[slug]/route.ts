@@ -5,9 +5,9 @@ import { FormSchema } from "~/types/form";
 
 export async function GET(
   _: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const formSlug = params.slug;
+  const formSlug = (await params).slug;
   const form = (forms as FormSchema[]).find((form) => form.slug === formSlug);
 
   if (!form) {

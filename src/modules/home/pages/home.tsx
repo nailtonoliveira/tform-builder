@@ -71,9 +71,31 @@ export default function Home() {
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", rowGap: 4, py: 6 }}>
-      <Typography variant="h4" fontWeight="bold">
-        Conheça e teste algumas opções de Forms disponiveis
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 2,
+        }}
+      >
+        <Box>
+          <Typography variant="h4" fontWeight="bold">
+            Forms disponiveis
+          </Typography>
+          <Typography variant="body1">
+            Conheça e teste algumas opções de Forms e navegue até eles para
+            testa-los
+          </Typography>
+        </Box>
+
+        <Button
+          variant="outlined"
+          onClick={() => router.push("/forms-in-tabs")}
+        >
+          Ver Forms em Abas
+        </Button>
+      </Box>
 
       <Box
         sx={{ display: "grid", gap: 2, gridTemplateColumns: "repeat(3, 1fr)" }}

@@ -10,7 +10,7 @@ interface Props {
 
 export function FormActions({ actions, isLoading }: Props) {
   return (
-    <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2, mt: 2 }}>
+    <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2 }}>
       {actions.map((action) => (
         <Button
           key={action.label}

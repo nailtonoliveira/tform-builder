@@ -85,7 +85,7 @@ export function FormBuilder({ formSchema }: Props) {
         container
         spacing={2}
         sx={{
-          p: 4,
+          p: { xs: 2, sm: 4 },
           borderWidth: 1,
           borderStyle: "solid",
           borderColor: "text.disabled",
@@ -108,6 +108,7 @@ export function FormBuilder({ formSchema }: Props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          mt: 2,
         }}
       >
         <Typography variant="caption" color="textSecondary">

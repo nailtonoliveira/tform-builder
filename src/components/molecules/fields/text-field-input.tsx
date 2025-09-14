@@ -15,7 +15,7 @@ interface Props {
 
 export function TextFieldInput({ field, control, error, columns = 12 }: Props) {
   return (
-    <Grid size={columns}>
+    <Grid size={{ xs: 12, sm: columns }}>
       <Controller
         name={field.name}
         control={control}

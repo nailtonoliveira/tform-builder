@@ -4,6 +4,7 @@
     "slug": "cadastrar-produto",
     "title": "Cadastro de Produto",
     "description": "Preencha os dados abaixo para cadastrar um novo produto.",
+    "created_at": "2025-09-11T18:00:03",
     "fields": [
       {
         "id": "da467f78-cf7b-4c1c-9b2e-e92965cb3f83",
@@ -53,6 +54,7 @@
     "slug": "cadastro-cliente",
     "title": "Cadastro de Cliente",
     "description": "Formulário de cadastro de cliente.",
+    "created_at": "2025-09-10T18:30:03",
     "fields": [
       {
         "id": "1df345eb-4851-44be-835b-01273ffb425f",
@@ -71,6 +73,176 @@
         "endpoint": "/api/forms",
         "method": "POST",
         "on_success_route": "/success-submit"
+      }
+    ]
+  },
+  {
+    "id": "8ccdede4-9aeb-4c35-bf10-09489cd38dd6",
+    "title": "Evento",
+    "slug": "event",
+    "description": "Formulário baseado no layout do modelo",
+    "created_at": "2025-04-15T18:54:03",
+    "updated_at": "2025-07-26T09:41:03",
+    "fields": [
+      {
+        "id": "id",
+        "name": "id",
+        "type": "text",
+        "label": "ID",
+        "placeholder": "323",
+        "validation": { "required": true },
+        "columns": 6
+      },
+      {
+        "id": "sequencia",
+        "name": "sequencia",
+        "type": "text",
+        "label": "Sequência",
+        "placeholder": "1",
+        "validation": { "required": true },
+        "columns": 6
+      },
+      {
+        "id": "tipo",
+        "name": "tipo",
+        "type": "text",
+        "label": "Tipo",
+        "placeholder": "1 - Original",
+        "validation": { "required": true },
+        "columns": 6
+      },
+      {
+        "id": "recibo",
+        "name": "recibo",
+        "type": "text",
+        "label": "Nº Recibo",
+        "placeholder": "",
+        "validation": { "required": false },
+        "columns": 6
+      },
+      {
+        "id": "periodo",
+        "name": "periodo",
+        "type": "date",
+        "label": "Período",
+        "placeholder": "08/2023",
+        "validation": { "required": true, "allowPastDates": true },
+        "columns": 6
+      },
+      {
+        "id": "tipo_inscricao",
+        "name": "tipo_inscricao",
+        "type": "text",
+        "label": "Tipo Inscrição",
+        "placeholder": "1 - CNPJ",
+        "validation": { "required": true },
+        "columns": 6
+      },
+      {
+        "id": "inscricao_tomador",
+        "name": "inscricao_tomador",
+        "type": "text",
+        "label": "Inscrição Tomador",
+        "placeholder": "00.000.000/0001-00",
+        "validation": { "required": true },
+        "columns": 6
+      },
+      {
+        "id": "obra",
+        "name": "obra",
+        "type": "text",
+        "label": "Obra",
+        "placeholder": "0 - Não é obra de construção civil...",
+        "validation": { "required": true },
+        "columns": 6
+      },
+      {
+        "id": "cnpj_prestador",
+        "name": "cnpj_prestador",
+        "type": "text",
+        "label": "CNPJ Prestador",
+        "placeholder": "00.000.000/0001-00",
+        "validation": { "required": true },
+        "columns": 12
+      },
+      {
+        "id": "valor_total_bruto",
+        "name": "valor_total_bruto",
+        "type": "money",
+        "label": "Valor Total Bruto",
+        "placeholder": "R$ 9.999.999,99",
+        "validation": { "required": true, "minValue": 0 },
+        "columns": 4
+      },
+      {
+        "id": "valor_total_base_retencao",
+        "name": "valor_total_base_retencao",
+        "type": "money",
+        "label": "Valor Total Base Retenção",
+        "placeholder": "R$ 9.999.999,99",
+        "validation": { "required": true, "minValue": 0 },
+        "columns": 4
+      },
+      {
+        "id": "valor_total_retencao",
+        "name": "valor_total_retencao",
+        "type": "money",
+        "label": "Valor Total Retenção",
+        "placeholder": "R$ 9.999.999,99",
+        "validation": { "required": true, "minValue": 0 },
+        "columns": 4
+      },
+      {
+        "id": "valor_total_retencao_adicional",
+        "name": "valor_total_retencao_adicional",
+        "type": "money",
+        "label": "Valor Total Retenção Adicional",
+        "placeholder": "R$ 0,00",
+        "validation": { "required": false, "minValue": 0 },
+        "columns": 6
+      },
+      {
+        "id": "valor_total_nao_retido",
+        "name": "valor_total_nao_retido",
+        "type": "money",
+        "label": "Valor Total Não Retido",
+        "placeholder": "R$ 0,00",
+        "validation": { "required": false, "minValue": 0 },
+        "columns": 6
+      },
+      {
+        "id": "valor_total_nao_retido_adicional",
+        "name": "valor_total_nao_retido_adicional",
+        "type": "money",
+        "label": "Valor Total Não Retido Adicional",
+        "placeholder": "R$ 0,00",
+        "validation": { "required": false, "minValue": 0 },
+        "columns": 6
+      },
+      {
+        "id": "cprb",
+        "name": "cprb",
+        "type": "text",
+        "label": "CPRB",
+        "placeholder": "0 - Não é contribuinte da CPRB - Retenção 11%",
+        "validation": { "required": true },
+        "columns": 12
+      }
+    ],
+    "actions": [
+      {
+        "id": "cancelar",
+        "type": "route",
+        "label": "Cancelar",
+        "route": "/"
+      },
+      {
+        "id": "salvar",
+        "type": "rest",
+        "label": "Salvar",
+        "endpoint": "/api/forms",
+        "method": "POST",
+        "on_success_route": "/eventos"
       }
     ]
   }

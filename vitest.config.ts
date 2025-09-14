@@ -11,7 +11,7 @@ export default defineConfig({
       provider: "v8",
       exclude: [
         ...coverageConfigDefaults.exclude,
-        "**/{next,postcss,tailwind}.config.?(c|m)[jt]s",
+        "**/{next}.config.?(c|m)[jt]s",
         "./src/test-helpers",
       ],
     },

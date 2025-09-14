@@ -24,4 +24,13 @@ export const theme = createTheme({
   typography: {
     fontFamily: "var(--font-roboto)",
   },
+  components: {
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+  },
 });

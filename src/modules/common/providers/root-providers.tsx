@@ -9,6 +9,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
 
+import "dayjs/locale/pt-br";
+
 import { theme } from "~/theme";
 
 interface RootProvidersProps {
@@ -24,7 +26,10 @@ export default function RootProviders({ children }: RootProvidersProps) {
         <CssBaseline />
 
         <QueryClientProvider client={queryClient}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <LocalizationProvider
+            dateAdapter={AdapterDayjs}
+            adapterLocale="pt-br"
+          >
             {children}
           </LocalizationProvider>
         </QueryClientProvider>

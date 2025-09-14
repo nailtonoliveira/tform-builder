@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">
+  <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3">
+    <path d="M160-520q-33 0-56.5-23.5T80-600v-120q0-33 23.5-56.5T160-800h360v280H160Zm0-80h280v-120H160v120Zm0 440q-33 0-56.5-23.5T80-240v-120q0-33 23.5-56.5T160-440h440v280H160Zm0-80h360v-120H160v120Zm520 80v-360h-80v-280h280l-80 200h80L680-160ZM190-270h60v-60h-60v60Zm0-360h60v-60h-60v60Zm-30 30v-120 120Zm0 360v-120 120Z"/>
+  </svg>
+  
+  TFORM BUILDER
+</h1>
 
-## Getting Started
+This is a NextJS application developed to allow users to render dynamic forms based on JSON settings loaded from an API.
 
-First, run the development server:
+## ⚙️ Pre-requisite
+
+- [Git](https://reactjs.org/)
+- [Node.js](https://nodejs.org/pt/) `v20.19.5` (using the `.nvmrc`)
+- [pnpm](https://pnpm.io/pt/) (Fast, disk space efficient package manager)
+
+## 🚀 Installation
+
+Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:nailtonoliveira/tform-builder.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open a terminal on the repository folder and install the dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the application in development mode run:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+or to run the application in production mode you will need to build before, run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm build
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This application was bootstrapped with [Create Next App](https://nextjs.org/docs/app/api-reference/cli/create-next-app). Follow the link for further information.
 
-## Deploy on Vercel
+## 📚 Technologies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project was developed with the following technologies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ReactJS](https://reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Material UI - Mui](https://mui.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Axios](https://github.com/axios/axios)
+- [Tanstack React Query](https://tanstack.com/query/latest/)
+- [VS Code](https://code.visualstudio.com/) with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Vistest](https://vitest.dev/)
+- [React Testin Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [MSW](https://mswjs.io/)
+
+---
+
+Made by Nailton Oliveira :wave: [Get in touch!](https://www.linkedin.com/in/nailtonoliveira-developer/)

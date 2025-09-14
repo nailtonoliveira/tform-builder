@@ -5,14 +5,16 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import { toast } from "sonner";
 
 import { useFormSchema } from "~/hooks/useFormSchema";
+import { useSubmitForm } from "~/hooks/useSubmitForm";
 import { FormSchema } from "~/types/form";
+import { formatDate } from "~/lib/date";
 
 import { FormActions } from "./form-actions";
 import { FormField } from "./form-field";
-import { useSubmitForm } from "~/hooks/useSubmitForm";
 
 interface Props {
   formSchema: FormSchema;
@@ -101,10 +103,26 @@ export function FormBuilder({ formSchema }: Props) {
         ))}
       </Grid>
 
-      <FormActions
-        actions={formSchema.actions}
-        isLoading={submitMutation.isPending}
-      />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Typography variant="caption" color="textSecondary">
+          Ultima alteração em{" "}
+          {formatDate(
+            formSchema.updated_at || formSchema.created_at,
+            "DD/MM/YYYY [às] HH:mm"
+          )}
+        </Typography>
+
+        <FormActions
+          actions={formSchema.actions}
+          isLoading={submitMutation.isPending}
+        />
+      </Box>
     </Box>
   );
 }

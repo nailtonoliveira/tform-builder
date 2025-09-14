@@ -37,4 +37,6 @@ export interface FormSchema {
   description?: string;
   fields: FieldSchema[];
   actions: ActionSchema[];
+  created_at: string;
+  updated_at?: string;
 }

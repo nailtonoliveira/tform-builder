@@ -80,8 +80,8 @@ export default function Home() {
       >
         {forms.map((form) => (
           <Card sx={{ display: "flex", flexDirection: "column" }} key={form.id}>
-            <CardHeader title={form.title} />
             <CardContent sx={{ mb: "auto" }}>
+              <Typography variant="h6">{form.title}</Typography>
               <Typography variant="body2" color="textSecondary">
                 {form.description}
               </Typography>

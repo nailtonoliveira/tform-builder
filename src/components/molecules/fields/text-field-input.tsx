@@ -2,7 +2,7 @@
 
 import { Control, Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
-import Grid, { GridSize } from "@mui/material/Grid";
+import Grid from "@mui/material/Grid";
 
 import { FieldSchema } from "~/types/form";
 

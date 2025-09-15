@@ -242,7 +242,7 @@
         "label": "Salvar",
         "endpoint": "/api/forms",
         "method": "POST",
-        "on_success_route": "/eventos"
+        "on_success_route": "/event"
       }
     ]
   }

@@ -32,7 +32,7 @@ export default function Home() {
           sx={{
             display: "grid",
             gap: 2,
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
           }}
         >
           {Array.from({ length: 3 }).map((_, index) => (
@@ -98,7 +98,11 @@ export default function Home() {
       </Box>
 
       <Box
-        sx={{ display: "grid", gap: 2, gridTemplateColumns: "repeat(3, 1fr)" }}
+        sx={{
+          display: "grid",
+          gap: 2,
+          gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+        }}
       >
         {forms.map((form) => (
           <Card sx={{ display: "flex", flexDirection: "column" }} key={form.id}>

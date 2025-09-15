@@ -89,12 +89,12 @@ export default function Home() {
           </Typography>
         </Box>
 
-        <Button
+        {/* <Button
           variant="outlined"
           onClick={() => router.push("/forms-in-tabs")}
         >
           Ver Forms em Abas
-        </Button>
+        </Button> */}
       </Box>
 
       <Box
